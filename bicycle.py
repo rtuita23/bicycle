@@ -4,23 +4,27 @@ class Bicycle:    # Create Bicycle class
         self.weight = weight
         self.cost = cost
         
-    def __str__(self):    # Return the parameters for print
-        return self.modelName + ' ' + self.weight + ' ' + str(self.cost)
-    
-class Shop():    # Create a Bicycle Shop class which derives from Bicycle Class
+    def __str__(self):    # Return the parameters
+        return {'model':self.modelName, 'weight': self.weight, 'cost':self.cost}
+        
+class Bike_Shop():    # Create a Bicycle Shop class which derives from Bicycle Class
     def __init__(self, name, inventory):    # Constructor w/ 2 parameters
         self.name = name
-        self.stock = inventory
+        self.inventory = inventory
     
     def __str__(self):    # Return the parameters for print
-        retStr = 'Name of store is ' + self.name + '\n'
-        retStr += 'Inventory is ' + str(self.stock)
-        return retStr
-        
+        return 'Name of store is: ' + self.name + '\n' + \
+               'Inventory is: ' + str(self.inventory) + '\n'
+                
+    '''
     def price(self):    # Compute sales price per bike
         selling_price = 0
-        self.selling_price = self.cost + (self.cost*.20)
-        return self.selling_price 
+        for bike in self.inventory:
+            for i in bike:
+                if i == 'cost':
+                    selling_price += int(self.inventory[i]) + int((self.inventory[i]))*.20
+        return selling_price
+    '''
     
     def profit(self):    # Compute profit margin for all sales
         return self.price() - self.cost
@@ -31,5 +35,6 @@ class Customer:    # Create a Customer class
         self.fund = fund
     
     def __str__(self):
-        return self.name + ' ' + str(self.fund)      
+        return 'Customer Name: '+ self.name + '\n' + \
+               'Fund Amount: ' + str(self.fund)
     
