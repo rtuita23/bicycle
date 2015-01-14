@@ -11,12 +11,11 @@ def main():
     for i in bike_inventory:
         print i
 
-    
     #print str(bic1) + '\n' + str(bic2) + '\n' + str(bic3) + '\n'
     
     # Intianting the shop objects
-    bshop = Shop(bike_inventory)
-
+    bshop = bp.Shop('main Store', bike_inventory)
+    
     cus1 = bp.Customer('Paul', 200)
     cus2 = bp.Customer('Peter', 500)
     cus3 = bp.Customer('Jane', 1000)

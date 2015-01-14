@@ -7,20 +7,15 @@ class Bicycle:    # Create Bicycle class
     def __str__(self):    # Return the parameters for print
         return self.modelName + ' ' + self.weight + ' ' + str(self.cost)
     
-class Shop(Bicycle):    # Create a Bicycle Shop class which derives from Bicycle Class
-    stock = []
-    def __init__(self, modelName, weight, cost, name):    # Constructor w/ 4 parameters
-        Bicycle.__init__(self, modelName, weight, cost)    # Inherit inventory from Bicycle Class
+class Shop():    # Create a Bicycle Shop class which derives from Bicycle Class
+    def __init__(self, name, inventory):    # Constructor w/ 2 parameters
         self.name = name
+        self.stock = inventory
     
     def __str__(self):    # Return the parameters for print
         retStr = 'Name of store is ' + self.name + '\n'
-        retStr += 'Inventory is ' + str(self.inventory())
+        retStr += 'Inventory is ' + str(self.stock)
         return retStr
-    
-    def inventory(self):
-        self.stock.append([self.modelName, self.weight, self.cost])
-        return self.stock
         
     def price(self):    # Compute sales price per bike
         selling_price = 0
